@@ -3,7 +3,7 @@
     container: 'map',
     style: 'mapbox://styles/bentz123/ck5e9mhob08rj1il4qxc99g42',
     center: [34.783796, 32.077739],
-    zoom: 13
+    zoom: 12
   });
 
   var features = ''
@@ -24,7 +24,10 @@
   var listingEl = document.getElementById('feature-listing');
 
   filterEl.addEventListener('keyup', function (e) {
-
+    map.setLayoutProperty(
+      'vegan-places',
+      'visibility',
+      'visible')
     var value = e.target.value;
 
     var filtered = features.filter(function (feature) {
@@ -33,7 +36,13 @@
     });
 
     renderListings(filtered);
-
+    if (filtered.length == 0) {
+      map.setLayoutProperty(
+        'vegan-places',
+        'visibility',
+        'none');
+      return;
+    }
     map.setFilter('vegan-places', [
       'match',
       ['get', 'title'],
@@ -88,7 +97,7 @@
         offset: [0, -15]
       })
       .setLngLat(feature.geometry.coordinates)
-      .setHTML('<h3>' + feature.properties.title + '</h3><p>' + feature.properties.description + '</p>')
+      .setHTML('<div id="title" class="title-style">' + feature.properties.title + '</div><div id="desc" class="desc-style">' + feature.properties.description + '</div>')
       .addTo(map);
   });
 

@@ -84,5 +84,12 @@ body {
     border-bottom: 0.3vh dotted black;
     margin: 0.5vw;
     padding-bottom: 0.2vw;
+}
 
+.title-style {
+    font: 200 1vw Helvetica, Verdana, sans-serif;
+}
+
+.desc-style {
+    font: 200 0.75vw Helvetica, Verdana, sans-serif;
 }
