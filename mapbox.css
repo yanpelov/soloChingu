@@ -21,7 +21,6 @@ body {
     background-color: Transparent;
     border: none;
     font-size: 3vw;
-
 }
 
 /*.sidebar-xbtn {
@@ -36,6 +35,7 @@ body {
 }
 
 .search-field {
+    position: absolute;
     background: rgba(55, 212, 120);
     width: 100%;
     height: 100%;
@@ -91,5 +91,16 @@ body {
 }
 
 .desc-style {
-    font: 200 0.75vw Helvetica, Verdana, sans-serif;
+    font: 200 1vw Helvetica, Verdana, sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        height: 25%;
+        top: 75%;
+        background: rgba(55, 212, 120);
+    }
+    
+  }
