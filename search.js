@@ -35,6 +35,7 @@
       return name.indexOf(value) === 0;
     });
 
+
     renderListings(filtered);
     if (filtered.length == 0) {
       map.setLayoutProperty(
@@ -57,7 +58,15 @@
   function renderListings(features) {
     listingEl.innerHTML = '';
     if (features.length) {
-      features.forEach(function (feature) {
+      features.forEach(function (feature, n) { 
+        if(n == 0)
+        {
+          popup
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML('<div id="title" class="title-style">' + feature.properties.title + '</div><div id="desc" class="desc-style">' + feature.properties.description + '</div>')
+          .addTo(map);
+          map.flyTo({center: feature.geometry.coordinates, zoom: 15});
+        }
         var prop = feature.properties;
         var item = document.createElement('li');
         item.className = "listing-item";
@@ -67,7 +76,11 @@
           .setLngLat(feature.geometry.coordinates)
           .setHTML('<div id="title" class="title-style">' + feature.properties.title + '</div><div id="desc" class="desc-style">' + feature.properties.description + '</div>')
           .addTo(map);
-          });
+          map.flyTo({center: feature.geometry.coordinates, zoom: 15});
+
+                  });
+
+
         listingEl.appendChild(item);
       });
 
