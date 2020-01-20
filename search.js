@@ -2,7 +2,7 @@
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/bentz123/ck5e9mhob08rj1il4qxc99g42',
-    center: [34.783796, 32.077739],
+    center: [34.768403,32.063209],
     zoom: 12
   });
 
@@ -16,9 +16,9 @@
 
   });
 
-  /*  var popup = new mapboxgl.Popup({
+    var popup = new mapboxgl.Popup({
     closeButton: false,  offset: [0, -15] 
-    });*/
+    });
 
   var filterEl = document.getElementById('feature-filter');
   var listingEl = document.getElementById('feature-listing');
@@ -62,18 +62,12 @@
         var item = document.createElement('li');
         item.className = "listing-item";
         item.textContent = prop.title + ' (' + prop.description + ')';
-        /* item.addEventListener('mouseover', function() {
-          // Highlight corresponding feature on the map
+         item.addEventListener('mouseover', function() {
           popup
           .setLngLat(feature.geometry.coordinates)
-          .setText(
-          feature.properties.title +
-          ' (' +
-          feature.properties.description +
-          ')'
-          )
+          .setHTML('<div id="title" class="title-style">' + feature.properties.title + '</div><div id="desc" class="desc-style">' + feature.properties.description + '</div>')
           .addTo(map);
-          });*/
+          });
         listingEl.appendChild(item);
       });
 
@@ -81,25 +75,6 @@
       filterEl.parentNode.style.display = 'block';
     }
   }
-
-  map.on('click', function (e) {
-    var features = map.queryRenderedFeatures(e.point, {
-      layers: ['vegan-places'] // replace this with the name of the layer
-    });
-
-    if (!features.length) {
-      return;
-    }
-
-    var feature = features[0];
-
-    var popup = new mapboxgl.Popup({
-        offset: [0, -15]
-      })
-      .setLngLat(feature.geometry.coordinates)
-      .setHTML('<div id="title" class="title-style">' + feature.properties.title + '</div><div id="desc" class="desc-style">' + feature.properties.description + '</div>')
-      .addTo(map);
-  });
 
   function expand_sidebar() {
     if (document.getElementById("sidebar").style.display == "none") {

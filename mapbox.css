@@ -23,13 +23,6 @@ body {
     font-size: 3vw;
 }
 
-/*.sidebar-xbtn {
-    position: relative;
-    background-color: Transparent;
-    border: none;
-    font-size: 5vw;
-    top: -1.5vh;
-}*/
 .sidebar-btn:focus {
     outline: 0;
 }
@@ -74,6 +67,7 @@ body {
     height: 93%;
     top: 7%;
     list-style-type: none;
+    overflow: scroll;
 }
 
 .listing-item {
@@ -108,6 +102,7 @@ body {
         height: 95%;
         top: 5%;
         list-style-type: none;
+        overflow: scroll;
     }
     
     .listing-item {
@@ -124,6 +119,7 @@ body {
         background: rgba(55, 212, 120);
         width: 100%;
         height: 100%;
+        font-size: 1vw;
         border: 0px;
         color: black;
         font: 200 5vw Helvetica, Verdana, sans-serif;
