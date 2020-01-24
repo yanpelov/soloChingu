@@ -3,9 +3,8 @@
     container: 'map',
     style: 'mapbox://styles/bentz123/ck5e9mhob08rj1il4qxc99g42',
     center: [34.768403,32.063209],
-    zoom: 12,
-    maxzoom: 15
-  });
+    zoom: 12
+    });
 
   var features = ''
   map.once("idle", function (e) {
