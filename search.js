@@ -32,7 +32,7 @@
 
     var filtered = features.filter(function (feature) {
       var name = feature.properties.code;
-      return name.indexOf(value) === 0;
+      return name.search(value) >= 0;
     });
 
 
