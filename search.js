@@ -75,7 +75,7 @@
         var prop = feature.properties;
         var item = document.createElement('li');
         item.className = "listing-item";
-        item.textContent = prop.title + ' (' + prop.description + ')';
+        item.textContent = prop.title;
          item.addEventListener('mouseover', function() {
           popup
           .setLngLat(feature.geometry.coordinates)
