@@ -1,4 +1,4 @@
-  mapboxgl.accessToken =  process.env.super_secret
+  mapboxgl.accessToken =  'pk.eyJ1IjoiYmVudHoxMjMiLCJhIjoiY2s1dGV5azR5MG1jeDNsbnc5MzhlYTl6aSJ9.bAvPTTxgKmOT-adQv2JM4Q'
   var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/bentz123/ck5e9mhob08rj1il4qxc99g42',

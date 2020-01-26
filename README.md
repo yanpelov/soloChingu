@@ -9,10 +9,9 @@ The project is based on the following [requirements](https://github.com/chingu-v
 - Popup information
 - Dynamic Sidebar
 - Responsive Design
-- Fly To Animation
 
 ## Running the project
-- Webserver (Apache/Ngnix/etc)
+- Webserver (Apache/Ngnix)
 - Clone project and serve as a static website
 
 ## Tech Tools 
